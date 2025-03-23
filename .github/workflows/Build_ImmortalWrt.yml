@@ -17,7 +17,7 @@ permissions:
   contents: write
 
 env:
-  REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x
+  REPO_URL: https://github.com/1280-720/immortalwrt-mt798x
   REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
@@ -26,7 +26,7 @@ env:
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
-  TZ: Asia/Shanghai
+  TZ: Asia/Ho_Chi_Minh
 
 jobs:
   build:
@@ -139,8 +139,8 @@ jobs:
         touch release.txt
         echo "## hanwckf's ImmortalWrt Release $(date +"%Y.%m.%d-%H:%M")" >> release.txt
         echo "- squashfs-sysupgrade.bin" >> release.txt
-        echo "  360T7-md5: $(md5sum ${{ env.FIRMWARE }}/*360-t7-108M-squashfs-sysupgrade.bin | cut -d" " -f1)" >> release.txt
-        echo "  360T7-sha256: $(cat ${{ env.FIRMWARE }}/sha256sums | grep -oE ".*360-t7-108M-squashfs-sysupgrade.bin" | grep -oE "\w{64}")" >> release.txt        
+        echo "  32x6-md5: $(md5sum ${{ env.FIRMWARE }}/*32x6-squashfs-sysupgrade.bin | cut -d" " -f1)" >> release.txt
+        echo "  32x6-sha256: $(cat ${{ env.FIRMWARE }}/sha256sums | grep -oE ".*32x6-squashfs-sysupgrade.bin" | grep -oE "\w{64}")" >> release.txt        
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Upload firmware to release
