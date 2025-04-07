@@ -139,8 +139,8 @@ jobs:
         touch release.txt
         echo "## hanwckf's ImmortalWrt Release $(date +"%Y.%m.%d-%H:%M")" >> release.txt
         echo "- squashfs-sysupgrade.bin" >> release.txt
-        echo "  32x6-md5: $(md5sum ${{ env.FIRMWARE }}/*32x6-squashfs-sysupgrade.bin | cut -d" " -f1)" >> release.txt
-        echo "  32x6-sha256: $(cat ${{ env.FIRMWARE }}/sha256sums | grep -oE ".*32x6-squashfs-sysupgrade.bin" | grep -oE "\w{64}")" >> release.txt        
+        echo "  -md5: $(md5sum ${{ env.FIRMWARE }}/*squashfs-sysupgrade.bin | cut -d" " -f1)" >> release.txt
+        echo "  -sha256: $(cat ${{ env.FIRMWARE }}/sha256sums | grep -oE ".*squashfs-sysupgrade.bin" | grep -oE "\w{64}")" >> release.txt        
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Upload firmware to release
