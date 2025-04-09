@@ -31,3 +31,6 @@ sed -i 's/192.168.[0-9]\{1,3\}.1/192.168.1.1/g' package/base-files/files/bin/con
 #git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 #git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
+# Correct wan name for mt7621 single gmac device
+sed -i 's|os.execute("uci set network.wan.ifname=eth1")|os.execute("uci set network.wan.ifname=eth0.2")|g' package/emortal/luci-app-mtwifi/luasrc/controller/mtkwifi.lua
+sed -i 's|wanname="eth1"|wanname="eth0.2"|g' package/emortal/luci-app-mtwifi/luasrc/controller/mtkwifi.lua
