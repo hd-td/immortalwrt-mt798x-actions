@@ -24,7 +24,7 @@ sed -i 's|WPAPSK1=1234567890|WPAPSK1=12345678|g' package/emortal/mt-drivers/mt_w
 #sed -i "s|sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow|sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow|g" package/emortal/default-settings/files/99-default-settings
 
 # name: 替换默认主题 luci-theme-argon
-#sed -i 's/luci-theme-bootstrap/luci-theme-argon/' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-argon-new/' feeds/luci/collections/luci/Makefile
 
 # Update Go to 1.21
 #rm -rf feeds/packages/lang/golang
