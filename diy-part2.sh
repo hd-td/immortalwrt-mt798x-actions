@@ -20,8 +20,8 @@ sed -i 's/192.168.[0-9]\{1,3\}.1/192.168.1.1/g' package/base-files/files/bin/con
 sed -i 's|SSID1=OpenWrt_2G|SSID1=OpenWrt|g' package/emortal/mt-drivers/mt_wifi/files/mt7603.dat #mt7603
 sed -i 's|WPAPSK1=1234567890|WPAPSK1=12345678|g' package/emortal/mt-drivers/mt_wifi/files/mt7612.dat #mt7612
 
-# Remove default password
-#sed -i "s|sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow|sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow|g" package/emortal/default-settings/files/99-default-settings
+# jesse123 default password
+sed -i "s|sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow|sed -i 's/root::0:0:99999:7:::/root:$1$ftfdef9C$jCP8YGq7NZCqxI8JMk.Um0:0:0:99999:7:::/g' /etc/shadow|g" package/emortal/default-settings/files/99-default-settings
 
 # name: 替换默认主题 luci-theme-argon
 sed -i 's/luci-theme-bootstrap/luci-theme-argon-new/' feeds/luci/collections/luci/Makefile
